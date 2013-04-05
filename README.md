@@ -8,7 +8,9 @@ Replacement hardware is important, and devices must iterate the same even after 
 
 # Requirements
 
-<a href="https://github.com/camb416/ofxLibdc">ofxLibdc</a>. Only slightly modified from <a href="https://github.com/kylemcdonald/ofxLibdc">kylemacdonald</a>'s original.
+- <a href="http://www.openframeworks.cc/download/">openFrameworks v0.7.4</a>
+- ofxXmlSettings
+- <a href="https://github.com/camb416/ofxLibdc">ofxLibdc</a>. Only slightly modified from <a href="https://github.com/kylemcdonald/ofxLibdc">kylemacdonald</a>'s original.
 
 #Screenshot
 
