@@ -8,14 +8,23 @@ void app::setup(){
     width = 1280;
 	height = 960;
     
+    
+    vector<string> idList = vidGrabber.getDeviceIDs();
+    for(int i=0;i<idList.size();i++){
+        cout << "CAMERA ID: " << i << ": " << idList.at(i) << endl;
+    }
     vidGrabber.setBayerMode(DC1394_COLOR_FILTER_RGGB);
     vidGrabber.setSize(width,height);
-    vidGrabber.setup(0);
+    stringstream stream;
+    stream << std::hex << 49712223531626199;
+    string result( stream.str() );
+    cout << "hex guid: " << result << endl;
+    vidGrabber.setup("b09d010098eed7");
     vidGrabber.printFeatures();
-    
+   
     vidGrabber2.setBayerMode(DC1394_COLOR_FILTER_RGGB);
     vidGrabber2.setSize(width,height);
-    vidGrabber2.setup(1);
+    vidGrabber2.setup("b09d010098eee2");
     vidGrabber2.printFeatures();
     
 	curFrame.allocate(width, height,OF_IMAGE_COLOR);
