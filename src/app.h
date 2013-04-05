@@ -1,8 +1,6 @@
 #pragma once
 
 #include "ofxLibdc.h"
-#include "ofxOpenCv.h"
-#include "ofxARToolkitPlus.h"
 #include "ofxXmlSettings.h"
 
 
