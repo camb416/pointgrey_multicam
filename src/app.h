@@ -3,6 +3,7 @@
 #include "ofxLibdc.h"
 #include "ofxOpenCv.h"
 #include "ofxARToolkitPlus.h"
+#include "ofxXmlSettings.h"
 
 
 #include "ofMain.h"
@@ -31,6 +32,8 @@ class app : public ofBaseApp{
     ofRectangle drawRect;
     ofRectangle calculateDrawRect();
     
+    ofxXmlSettings XML;
+    
     /* Size of the image */
     int width, height;
 	
@@ -38,21 +41,11 @@ class app : public ofBaseApp{
 
     int screenMargin;   // pixel dimension for layout
     
-    ofxLibdc::PointGrey vidGrabber;
-    ofxLibdc::PointGrey vidGrabber2;
-    ofImage curFrame;
-    ofImage curFrame2;
+    vector<ofxLibdc::PointGrey*> vidGrabbers;
 
-   	
-    /* OpenCV images */
-    ofImage colorImage;
-    ofImage colorImage2;
-    //ofImage grayImage;
-    //ofImage	grayThres;
-	
-    /* Image to distort on to the marker */
-    //ofImage displayImage;
-    /* The four corners of the image */
-    //vector<ofPoint> displayImageCorners;
+    vector<ofImage> curFrames;
+    vector<ofImage> colorImages;
+    vector<ofImage> grayScaleImages;
+
 		
 };
