@@ -2,7 +2,8 @@
 
 #include "ofxLibdc.h"
 #include "ofxXmlSettings.h"
-
+#include "CameraModel.h"
+#include "ofxARToolkitPlus.h"
 
 #include "ofMain.h"
 
@@ -29,21 +30,23 @@ class app : public ofBaseApp{
     
     ofRectangle drawRect;
     ofRectangle calculateDrawRect();
-    
-    ofxXmlSettings XML;
-    
-    /* Size of the image */
-    int width, height;
-	
-    /* Use either camera or a video file */
-
+    	
     int screenMargin;   // pixel dimension for layout
     
+    ofxXmlSettings XML;
+    void loadSettings();
+    
+    vector<CameraModel> cameraModels;
     vector<ofxLibdc::PointGrey*> vidGrabbers;
 
     vector<ofImage> curFrames;
     vector<ofImage> colorImages;
     vector<ofImage> grayScaleImages;
+    
+private:
+    
+    void applyModelSettingsToGrabber(ofxLibdc::PointGrey * grabber_ptr, CameraModel model);
+
 
 		
 };

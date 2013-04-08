@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:pointgrey_multicam.xcodeproj">
+      location = "self:multicam_imgrec.xcodeproj">
    </FileRef>
 </Workspace>
